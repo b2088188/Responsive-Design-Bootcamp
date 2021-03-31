@@ -4,9 +4,6 @@ const GlobalStyle = createGlobalStyle`
 	html,body{
 		height:100%;
 	}
-	html{
-		font-size:62.5%;
-	}
 
 	body{
 		box-sizing:border-box;
