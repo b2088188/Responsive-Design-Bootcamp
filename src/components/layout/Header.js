@@ -1,3 +1,4 @@
+import Link from "next/link";
 import styled from "styled-components/macro";
 
 function Header() {
@@ -8,9 +9,8 @@ function Header() {
 				flex-direction: column;
 				background: #f8f8f8;
 				padding: 2em 0;
-				@media screen and (max-width: 42.1875em) {
-					text-align: center;
-				}
+				text-align: center;
+				margin-bottom: 3em;
 			`}
 		>
 			<div
@@ -42,6 +42,7 @@ function Header() {
 							color: #1792d2;
 							font-size: 1rem;
 							font-weight: 700;
+							text-transform: uppercase;
 						`}
 					>
 						A Blog Exploring Minimalism Fife
@@ -65,19 +66,22 @@ function Header() {
 								}
 							`}
 						>
-							<a
-								css={`
-									color: #707070;
-									font-weight: 700;
-									&:hover,
-									&:focus {
-										color: #1792d2;
-									}
-								`}
-								href="/"
-							>
-								Home
-							</a>
+							<Link href="/">
+								<a
+									css={`
+										color: #707070;
+										font-weight: 700;
+										text-transform: uppercase;
+										letter-spacing: 1px;
+										&:hover,
+										&:focus {
+											color: #1792d2;
+										}
+									`}
+								>
+									Home
+								</a>
+							</Link>
 						</li>
 						<li
 							css={`
@@ -87,19 +91,22 @@ function Header() {
 								}
 							`}
 						>
-							<a
-								css={`
-									color: #707070;
-									font-weight: 700;
-									&:hover,
-									&:focus {
-										color: #1792d2;
-									}
-								`}
-								href="/"
-							>
-								About Me
-							</a>
+							<Link href="/simple-life/about-me">
+								<a
+									css={`
+										color: #707070;
+										font-weight: 700;
+										text-transform: uppercase;
+										letter-spacing: 1px;
+										&:hover,
+										&:focus {
+											color: #1792d2;
+										}
+									`}
+								>
+									About Me
+								</a>
+							</Link>
 						</li>
 						<li
 							css={`
@@ -109,19 +116,22 @@ function Header() {
 								}
 							`}
 						>
-							<a
-								css={`
-									color: #707070;
-									font-weight: 700;
-									&:hover,
-									&:focus {
-										color: #1792d2;
-									}
-								`}
-								href="/"
-							>
-								Recent Posts
-							</a>
+							<Link href="/simple-life/recent-posts">
+								<a
+									css={`
+										color: #707070;
+										font-weight: 700;
+										text-transform: uppercase;
+										letter-spacing: 1px;
+										&:hover,
+										&:focus {
+											color: #1792d2;
+										}
+									`}
+								>
+									Recent Posts
+								</a>
+							</Link>
 						</li>
 					</ul>
 				</nav>
