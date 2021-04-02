@@ -10,7 +10,7 @@ const GlobalStyle = createGlobalStyle`
 
 	body{
 		box-sizing:border-box;
-		font-family:'Ubuntu', sans-serif;
+		//font-family:'Ubuntu', sans-serif;
 		font-weight:300;
 		font-size:1.8rem;
 		line-height:1.6;
@@ -30,9 +30,9 @@ const GlobalStyle = createGlobalStyle`
 	}
 
 	h1,h2,h3{
-			font-family: "Lora", serif;
-			font-weight:400;
-			color:#143774;
+		//	font-family: "Lora", serif;
+			//font-weight:400;
+		//	color:#143774;
 	}
 `;
 
