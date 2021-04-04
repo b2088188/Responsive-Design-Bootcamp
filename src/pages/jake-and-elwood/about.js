@@ -42,7 +42,6 @@ function JakeAndElwood() {
 							[space2-end];
 						background: #000;
 						@media screen and (min-width: 37.5em) {
-							background: transparent;
 							position: absolute;
 							width: 100%;
 						}
@@ -216,201 +215,130 @@ function JakeAndElwood() {
 						</nav>
 					</div>
 				</header>
-				<main>
-					<section
-						css={`
-							display: grid;
+				<main
+					css={`
+						display: grid;
+
+						grid-template-columns:
+							[space1-start] minmax(1.6em, 1fr)
+							[space1-end content-start] minmax(0, 50rem)
+							[content-end space2-start] minmax(1.6em, 1fr)
+							[space2-end];
+						padding: 4em 0;
+						grid-gap: 0 1.5em;
+
+						& > * {
+							grid-column: content-start/content-end;
+						}
+						@media screen and (min-width: 37.5em) {
 							grid-template-columns:
 								[space1-start] minmax(1.6rem, 1fr)
-								[space1-end content-start] minmax(0, 50rem)
+								[space1-end content-start] repeat(
+									3,
+									[col-start] minmax(15rem, 32rem) [col-end]
+								)
 								[content-end space2-start] minmax(1.6rem, 1fr)
 								[space2-end];
-							grid-gap: 1.5em 0;
-							background: linear-gradient(
-									rgba(30, 30, 30, 0.5),
-									rgba(30, 30, 30, 0.5)
-								),
-								url(/img/jake-and-elwood/hero-bg.jpg) no-repeat bottom / cover;
-							color: #fff;
-							padding: 8em 0 4em 0;
-							& > * {
-								grid-column: space1-end / content-end;
-							}
-							@media screen and (min-width: 25em) {
-								& > * {
-									margin-right: 20%;
-								}
-							}
-							@media screen and (min-width: 37.5em) {
-								padding: 10em 0 6em 0;
-								grid-template-columns:
-									[space1-start] minmax(1.6rem, 1fr)
-									[space1-end content-start] repeat(
-										3,
-										[col-start] minmax(15rem, 32rem) [col-end]
-									)
-									[content-end space2-start] minmax(1.6rem, 1fr)
-									[space2-end];
-								& > * {
-									grid-column: col-start 1 / col-end 2;
-								}
-							}
-						`}
-					>
-						<h1
-							css={`
-								font-size: 2.4rem;
-								line-height: 1.4;
-							`}
-						>
-							The only marketing agency on
-							<span
-								css={`
-									color: #ffe600;
-								`}
-							>
-								a mission from God
-							</span>
-							, fully dedicated to increase your web traffic.
-						</h1>
-						<p>
-							We’re two brothers from Chicago that are trying to pay back our
-							debt. We can help you with
-							<strong>SEO, SEM content marketing</strong> and whatever else.
-						</p>
-						<a
-							href="/"
-							css={`
-								padding: 0.5em 1.75em;
-								font-weight: 700;
+						}
+					`}
+				>
+					<h1
+						css={`
+							font-size: 4.8rem;
+							justify-self: center;
+							position: relative;
+							&:after {
+								content: "";
+								position: absolute;
+								height: 2.5rem;
+								width: 25rem;
 								background: #ffe600;
-								color: #333;
-								justify-self: start;
-								&:hover {
-									cursor: pointer;
-									background: #ffb400;
-								}
-							`}
-						>
-							contact us
-						</a>
-					</section>
-					<section
-						css={`
-							display: grid;
-							grid-template-columns:
-								[space1-start] minmax(1.6rem, 1fr)
-								[space1-end content-start] minmax(0, 50rem)
-								[content-end space2-start] minmax(1.6rem, 1fr)
-								[space2-end];
-							grid-gap: 1.5em 0;
-							padding: 4em 0;
-							@media screen and (min-width: 37.5em) {
-								grid-template-columns:
-									[space1-start] minmax(1.6rem, 1fr)
-									[space1-end content-start] repeat(
-										3,
-										[col-start] minmax(15rem, 32rem) [col-end]
-									)
-									[content-end space2-start] minmax(1.6rem, 1fr)
-									[space2-end];
-								grid-gap: 0 2em;
+								bottom: 15px;
+								left: 10px;
+								z-index: -1;
 							}
 						`}
 					>
-						<div
+						About us.
+					</h1>
+					<p
+						css={`
+							font-size: 1.8rem;
+							margin: 0.5em 0 3em 0;
+						`}
+					>
+						We’re two brothers from Chicago. We can help you with SEO, SEM,
+						content marketing and whatever else.
+					</p>
+					<img
+						css={`
+							max-width: 100%;
+							margin-bottom: 1.5em;
+							box-shadow: 5px 5px 0 black, 10px 10px 0 #ffe600;
+							@media screen and (min-width: 37.5em) {
+								grid-column: col-start 1 / col-end 1;
+							}
+						`}
+						src="/img/jake-and-elwood/about-me.jpg"
+						alt=""
+					/>
+					<div
+						css={`
+							@media screen and (min-width: 37.5em) {
+								grid-column: col-start 2 / col-end 3;
+							}
+						`}
+					>
+						<h2
 							css={`
-								grid-column: space1-end / content-end;
-								text-align: center;
-								@media screen and (min-width: 37.5em) {
-									grid-column: col-start 1 / col-end 1;
+								font-size: 1.8rem;
+
+								&:after {
+									content: "";
+									display: block;
+									height: 3px;
+									width: 5rem;
+									background: #ffe600;
 								}
 							`}
 						>
-							<h2
-								css={`
-									font-size: 1.8rem;
-									color: #333;
-									&:after {
-										content: "";
-										display: block;
-										height: 3px;
-										width: 5rem;
-										background: #ffe600;
-										margin: 0 auto;
-									}
-								`}
-							>
-								About Us
-							</h2>
-							<p>
-								We grew up in downtown Chicago, and we used to play in a band.
-								Jake loves fried chicken, and Elwood loves dry white toast.
-							</p>
-						</div>
-						<div
+							We're really great guys
+						</h2>
+						<p>
+							We grew up in downtown Chicago, and we used to play in a band.
+							Jake loves fried chicken, and Elwood loves dry white toast.
+						</p>
+						<p>
+							While the band didn't make it, the hard work we put in trying to
+							promote it sure did. Like a lot of people, we needed a website,
+							and we needed to rank. The "experts" didn't seem to know what they
+							were talking about, so we figured it out on our own.
+						</p>
+						<h2
 							css={`
-								grid-column: space1-end / content-end;
-								text-align: center;
-								@media screen and (min-width: 37.5em) {
-									grid-column: col-start 2 / col-end 2;
+								font-size: 1.8rem;
+								&:after {
+									content: "";
+									display: block;
+									height: 3px;
+									width: 5rem;
+									background: #ffe600;
 								}
 							`}
 						>
-							<h2
-								css={`
-									font-size: 1.8rem;
-									color: #333;
-									&:after {
-										content: "";
-										display: block;
-										height: 3px;
-										width: 5rem;
-										background: #ffe600;
-										margin: 0 auto;
-									}
-								`}
-							>
-								Our skills
-							</h2>
-							<p>
-								Elwood is an expert in SEO, SEM, and driving from the police.
-								Jake is our social media specialist, and he has an amazing
-								voice.
-							</p>
-						</div>
-						<div
-							css={`
-								grid-column: space1-end / content-end;
-								text-align: center;
-								@media screen and (min-width: 37.5em) {
-									grid-column: col-start 3 / col-end 3;
-								}
-							`}
-						>
-							<h2
-								css={`
-									font-size: 1.8rem;
-									color: #333;
-									&:after {
-										content: "";
-										display: block;
-										height: 3px;
-										width: 5rem;
-										background: #ffe600;
-										margin: 0 auto;
-									}
-								`}
-							>
-								Get in touch
-							</h2>
-							<p>
-								Send us an email with some info about what help you need and
-								we’ll drive over to your place in our Bluesmobile the following
-								day to discuss the deal.
-							</p>
-						</div>
-					</section>
+							We can do all sorts of great stuff
+						</h2>
+						<p>
+							Honestly most people in this industry seem to be full of crap. We
+							don't care what you've heard, or what others have told you, we get
+							results and at the end of the day, what else matters?
+						</p>
+						<p>
+							So sure, maybe we're a bit different from what you'd expect, but
+							if you want to rank, market, and build your way to the top, we're
+							the brothers for you.
+						</p>
+					</div>
 				</main>
 				<footer
 					css={`
